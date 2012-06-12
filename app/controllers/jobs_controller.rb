@@ -5,46 +5,34 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
 
-    days_back = params[:days_back].to_i
-    keywords = params[:keywords]
+
+    print "Params: " + params.to_s
+    @jobs = Job.search(params) ? Job.search(params) : Job.all
+
     
-    require 'will_paginate'    
-    @jobs = Job.where("position LIKE ?", keywords)
+
+
 #    @jobs = Job.all.paginate(:per_page => 3)
-    
 
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
+  
 
-  # GET /jobs/1
-  # GET /jobs/1.json
+
   def show
     @job = Job.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
   end
 
-  # GET /jobs/new
-  # GET /jobs/new.json
+
   def new
     @job = Job.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
-  # GET /jobs/1/edit
+
   def edit
     @job = Job.find(params[:id])
   end
 
-  # POST /jobs
-  # POST /jobs.json
+
   def create
     @job = Job.new(params[:job])
 
@@ -59,8 +47,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # PUT /jobs/1
-  # PUT /jobs/1.json
+
   def update
     @job = Job.find(params[:id])
 
@@ -75,8 +62,7 @@ class JobsController < ApplicationController
     end
   end
 
-  # DELETE /jobs/1
-  # DELETE /jobs/1.json
+
   def destroy
     @job = Job.find(params[:id])
     @job.destroy

@@ -24,11 +24,11 @@
 			<div class="left_col">
 				<label>DAYS BACK</label>
 				<ul>
-					<li><%= link_to "3 Days", root_url(:days_back => "3") %></li>
-					<li><%= link_to "7 Days", root_url(:days_back => "7") %></li>
-					<li><%= link_to "14 Days", root_url(:days_back => "14") %></li>
-					<li><%= link_to "30 Days", root_url(:days_back => "30") %></li>
-					<li><%= link_to "60 Days", root_url(:days_back => "60") %></li>
+					<li><%= link_to "3 Days", root_url(params.merge({:days_back => "3"})) %></li>
+					<li><%= link_to "7 Days", root_url(params.merge({:days_back => "7"})) %></li>
+					<li><%= link_to "14 Days", root_url(params.merge({:days_back => "14"})) %></li>
+					<li><%= link_to "30 Days", root_url(params.merge({:days_back => "30"})) %></li>
+					<li><%= link_to "60 Days", root_url(params.merge({:days_back => "60"})) %></li>
 				</ul>						
 			</div>
 

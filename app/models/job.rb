@@ -6,13 +6,9 @@ class Job < ActiveRecord::Base
 
     results = Job.scoped
     
-    if params[:days_back]    
-      results = results.where("jobs.date_posted > ?", Date.today - params[:days_back].to_i.days) 
-    end
-    
-    if params[:keywords]
-      results = results.where("jobs.position LIKE ?", "%#{params[:keywords]}%") 
-    end
+    results = results.where("jobs.date_posted > ?", Date.today - params[:days_back].to_i.days) if params[:days_back]  
+    results = results.where("jobs.position LIKE ? OR jobs.company LIKE ?", "%#{params[:keywords]}%", "%#{params[:keywords]}%") if params[:keywords]
+    results = results.where("jobs.town LIKE ?", "%#{params[:location]}%") if params[:location]
     
     return results
     

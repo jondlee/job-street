@@ -11,9 +11,11 @@
 	<div class="header">
 		<div class="container">
 			<%= link_to image_tag("logo-jobstreet.png"), root_url %> 
-			<%= form_tag("/", :method => "get", :class => "search") do %>
+			<%= form_tag("/", :method => "post", :class => "search") do %>
 				<%= label_tag :keywords, "Keywords" %>
-				<%= text_field_tag :keywords %>
+				<%= text_field_tag :keywords, "", :placeholder => "Job or Company Name" %>
+				<%= label_tag :location, "Location" %>
+				<%= text_field_tag :location, "", :placeholder => "Job Location" %>
 				<%= submit_tag "Search" %>
 			<% end %>
 		</div>
@@ -32,12 +34,17 @@
 				</ul>						
 			</div>
 
-			<div class="mid_col">
-				<%= yield %>
-			</div>
-		</div>
-	
+			<%= yield %>
+
+		</div>	
 	<div>
+		
+	<div class="footer">
+		<div class="container">			
+			<a href="">About Us</a> | <a href="">Privacy Policy</a> | <a href="">Terms of Use</a><br />
+			<span class="copyright">© 2012 Job-Street.com. All rights reserved.</span>			
+		</div>
+	</div>
 
 </body>
 </html>

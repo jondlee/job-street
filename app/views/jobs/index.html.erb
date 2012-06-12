@@ -1,17 +1,21 @@
+<div class="mid_col">
+	<div class="sub_header">
+		<b>Job-Street Search Results</b>
+	</div>
 
+	<div class="content">
+		<table>
 
-<table>
+		<% @jobs.each do |job| %>
+  		<tr>
+    		<td>
+				<%= render job, :job => job %>
+			</td>    
+  		</tr>
+		<% end %>
+		</table>
 
-<% @jobs.each do |job| %>
-  <tr>
-    <td>
-		<%= render job, :job => job %>
-	</td>    
-  </tr>
-<% end %>
-</table>
+		<%= will_paginate @jobs %>
 
-
-
-
-<%= will_paginate @jobs %>
+	</div>
+</div>

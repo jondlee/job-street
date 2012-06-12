@@ -42,16 +42,36 @@ body {
 
 .mid_col {
 	float: left;
-	padding: 20px;
+
 	width: 578px;
-	border-right: 1px #999 solid;
-	border-left: 1px #999 solid;
+	border-right: 1px #c4c4c4 solid;
+	border-left: 1px #c4c4c4 solid;
+}
+
+.mid_col .sub_header {
+	float: left;
+	padding: 10px 20px;
+	border-bottom: 1px #c4c4c4 solid;
+	width: 538px;
+}
+
+.mid_col .content {
+	float: left;
+	padding: 10px 20px;
 }
 
 .right_col {
 	width: 160px;
 	padding-left: 20px;
 	float: right;
+}
+
+.footer {
+	border-top: 1px #c4c4c4 solid;
+	height: 50px;
+	padding: 20px 0;
+	clear:both;
+	text-align: center;
 }
 
 a {
@@ -85,11 +105,15 @@ form.search {
 
 form.search label {
 	margin-left: 40px;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	color: white;
 }
 
 form.search input {
-	font-size: 1.5em;
+	padding: 5px;
+	font-size: 1.2em;
 }
 
+.copyright {
+	font-size: .8em;
+}

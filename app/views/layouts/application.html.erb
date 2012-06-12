@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JobStreet - Your Path to a Better Job</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<div class="header">
+		<div class="container">
+			<%= link_to image_tag("logo-jobstreet.png"), root_url %> 
+			<%= form_tag("/", :method => "get", :class => "search") do %>
+				<%= label_tag :keywords, "Keywords" %>
+				<%= text_field_tag :keywords %>
+				<%= submit_tag "Search" %>
+			<% end %>
+		</div>
+	</div>
+	
+	<div class="content">
+		<div class="container">
+			<div class="left_col">
+				<label>DAYS BACK</label>
+				<ul>
+					<li><%= link_to "3 Days", root_url(:days_back => "3") %></li>
+					<li><%= link_to "7 Days", root_url(:days_back => "7") %></li>
+					<li><%= link_to "14 Days", root_url(:days_back => "14") %></li>
+					<li><%= link_to "30 Days", root_url(:days_back => "30") %></li>
+					<li><%= link_to "60 Days", root_url(:days_back => "60") %></li>
+				</ul>						
+			</div>
+
+			<div class="mid_col">
+				<%= yield %>
+			</div>
+		</div>
+	
+	<div>
+
+</body>
+</html>

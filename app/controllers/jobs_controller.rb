@@ -1,4 +1,4 @@
-
+require 'will_paginate'
 
 class JobsController < ApplicationController
   # GET /jobs
@@ -8,11 +8,8 @@ class JobsController < ApplicationController
 
     print "Params: " + params.to_s
     @jobs = Job.search(params) ? Job.search(params) : Job.all
-
     
-
-
-#    @jobs = Job.all.paginate(:per_page => 3)
+    @jobs = @jobs.paginate(:page => params[:page], :per_page => 3)
 
   end
   

@@ -1,4 +1,4 @@
-require 'will_paginate'
+
 
 class JobsController < ApplicationController
   # GET /jobs
@@ -8,8 +8,9 @@ class JobsController < ApplicationController
     days_back = params[:days_back].to_i
     keywords = params[:keywords]
     
-#    @jobs = Job.where("position LIKE ?", keywords)
-@jobs = Job.all.paginate(:per_page => 3)
+    require 'will_paginate'    
+    @jobs = Job.where("position LIKE ?", keywords)
+#    @jobs = Job.all.paginate(:per_page => 3)
     
 
     respond_to do |format|

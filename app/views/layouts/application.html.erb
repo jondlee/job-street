@@ -10,14 +10,23 @@
 	
 	<div class="header">
 		<div class="container">
-			<%= link_to image_tag("logo-jobstreet.png"), root_url %> 
-			<%= form_tag("/", :method => "post", :class => "search") do %>
-				<%= label_tag :keywords, "Keywords" %>
-				<%= text_field_tag :keywords, "", :placeholder => "Job or Company Name" %>
-				<%= label_tag :location, "Location" %>
-				<%= text_field_tag :location, "", :placeholder => "Job Location" %>
-				<%= submit_tag "Search" %>
-			<% end %>
+			<%= link_to image_tag("logo-jobstreet.png"), root_url, :class => "logo" %> 
+					
+			<form action="/" accept-charset="UTF-8" method="post" class="search">
+				<div class="search_field">
+					<%= label_tag :keywords, "Keywords" %> <span class="hint">job title or company</span><br />
+					<%= text_field_tag :keywords, params[:keywords], :placeholder => "Job or Company Name" %>
+				</div>
+				<div class="search_field">
+					<%= label_tag :location, "Location" %> <span class="hint">city or state</span><br />
+					<%= text_field_tag :location, params[:location], :placeholder => "Job Location" %>
+				</div>
+				<div class="search_field">
+			  		<%= submit_tag "Search", :type => "image", :url => image_tag("search_button.png"), :class => "submit" %>
+				</div>
+			</form>
+			
+			
 		</div>
 	</div>
 	
@@ -31,11 +40,67 @@
 					<li><%= link_to "14 Days", root_url(params.merge({:days_back => "14"})) %></li>
 					<li><%= link_to "30 Days", root_url(params.merge({:days_back => "30"})) %></li>
 					<li><%= link_to "60 Days", root_url(params.merge({:days_back => "60"})) %></li>
-				</ul>						
+				</ul>	
+				
+				<label>POPULAR SEARCHES</label>
+				<ul>
+					<li><%= link_to "Medical - see new jobs »", root_url(params.merge({:keywords => "Medical"})) %></li>
+					<li><%= link_to "Healthcare - see new jobs »", root_url(params.merge({:keywords => "Healthcare"})) %></li>
+					<li><%= link_to "Driver - see new jobs »", root_url(params.merge({:keywords => "Driver"})) %></li>
+					<li><%= link_to "Sales - see new jobs »", root_url(params.merge({:keywords => "Sales"})) %></li>
+					<li><%= link_to "Administrative - see new jobs »", root_url(params.merge({:keywords => "Administrative"})) %></li>
+					<li><%= link_to "Financial - see new jobs »", root_url(params.merge({:keywords => "Financial"})) %></li>					
+				</ul>	
+				
+				<div class="ad_small">
+					<a href="" class="google">Ads by Google</a>
+					<a href="" class="ad">Job Description</a>
+					<a href="" class="ad">Job Search Engines</a>				
+					<a href="" class="ad">Job Search In</a>					
+				</div>
+							
+
 			</div>
 
 			<%= yield %>
 
+			<div class="right_col">
+				
+				<div class="ad_skyscraper">
+					<p>Ads by Google</p>
+					<div class="ad">
+						<a href="">Quincy Jobs (Hiring)</a>
+						<p>Positions Available in Quincy Now Accepting Applications!</p>
+						<a href="" class="small">www.payscroll.com/Jobs/</a>
+					</div>
+					
+					<div class="ad">
+						<a href="">Quincy Jobs (Hiring)</a>
+						<p>Positions Available in Quincy Now Accepting Applications!</p>
+						<a href="" class="small">www.payscroll.com/Jobs/</a>
+					</div>
+					
+					<div class="ad">
+						<a href="">Quincy Jobs (Hiring)</a>
+						<p>Positions Available in Quincy Now Accepting Applications!</p>
+						<a href="" class="small">www.payscroll.com/Jobs/</a>
+					</div>
+					
+					<div class="ad">
+						<a href="">Quincy Jobs (Hiring)</a>
+						<p>Positions Available in Quincy Now Accepting Applications!</p>
+						<a href="" class="small">www.payscroll.com/Jobs/</a>
+					</div>
+					
+					<div class="ad">
+						<a href="">Quincy Jobs (Hiring)</a>
+						<p>Positions Available in Quincy Now Accepting Applications!</p>
+						<a href="" class="small">www.payscroll.com/Jobs/</a>
+					</div>
+				</div>
+				
+			</div>
+			
 		</div>	
 	<div>
 		

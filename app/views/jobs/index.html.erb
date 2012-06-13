@@ -4,6 +4,44 @@
 	</div>
 
 	<div class="content">
+		
+		<p class="results">Found <%= @results %> Jobs <% if not params[:location].blank? %>in <%= params[:location] %> <% end %><% if not params[:keywords].blank? %>'<%= params[:keywords] %>'<% end %></p>
+		
+		<div class="ad_square">
+			<p>Ads by Google</p>
+			<div class="ad">
+				<a href="">Quincy Jobs (Hiring)</a>
+				<p>Positions Available in Quincy Now Accepting Applications!</p>
+				<a href="" class="small">www.payscroll.com/Jobs/</a>
+			</div>
+			
+			<div class="ad">
+				<a href="">Quincy Jobs (Hiring)</a>
+				<p>Positions Available in Quincy Now Accepting Applications!</p>
+				<a href="" class="small">www.payscroll.com/Jobs/</a>
+			</div>
+			
+			<div class="ad">
+				<a href="">Quincy Jobs (Hiring)</a>
+				<p>Positions Available in Quincy Now Accepting Applications!</p>
+				<a href="" class="small">www.payscroll.com/Jobs/</a>
+			</div>
+			
+			<div class="ad">
+				<a href="">Quincy Jobs (Hiring)</a>
+				<p>Positions Available in Quincy Now Accepting Applications!</p>
+				<a href="" class="small">www.payscroll.com/Jobs/</a>
+			</div>
+			
+			<div class="ad">
+				<a href="">Quincy Jobs (Hiring)</a>
+				<p>Positions Available in Quincy Now Accepting Applications!</p>
+				<a href="" class="small">www.payscroll.com/Jobs/</a>
+			</div>
+		</div>
+		
+		<div style="clear:both;"></div>
+		
 		<table>
 
 		<% @jobs.each do |job| %>

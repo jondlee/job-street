@@ -42,20 +42,25 @@ ul {
 	color: #999;
 }
 
+.header {
+	background: #385c78;
+/*	border-top: 9px solid #99cc33;*/
+	height: 210px;
+}
+
+.header .container {
+	background: #1f3241;	
+}
+
 .container {
 	width: 1000px;
 	margin: 0 auto;
-}
-
-.header {
-	background: #1f3241;
-	border-top: 9px solid #99cc33;
-	height: 150px;
 	padding: 20px 0;
 }
 
 .logo {
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 .left_col {
@@ -132,10 +137,10 @@ a:hover {
 
 .search {
 	margin: 0 auto;
-	text-align: center;
+
 	padding: 20px;
-	width: 700px;
-	background: white;
+	width: 640px;
+	background: #121d26;
 }
 
 form .search_field {	

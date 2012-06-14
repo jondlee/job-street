@@ -1,0 +1,59 @@
+<div class="mid_col">
+	<div class="sub_header">
+		<b>Job-Street Search Results</b>
+	</div>
+
+	<div class="content">
+		
+		<p class="results">Found <%= @results %> Jobs <% if not params[:location].blank? %>in <%= params[:location] %> <% end %><% if not params[:keywords].blank? %>'<%= params[:keywords] %>'<% end %></p>
+		
+		<div class="ad_square">
+			<p>Ads by Google</p>
+			<div class="ad">
+				<a href="">Cambridge Career Training</a>
+				<p>Find a New Career Path at American Career in Cambridge. Request Info!</p>
+				<a href="" class="small">www.aci.edu/Cambridge</a>
+			</div>
+			
+			<div class="ad">
+				<a href="">Cambridge Jobs</a>
+				<p>Search Jobs in Cambridge. Post Your Resume &amp; Get Found Today!</p>
+				<a href="" class="small">www.monster.com</a>
+			</div>
+			
+			<div class="ad">
+				<a href="">Cambridge Jobs (Hiring)</a>
+				<p>Positions Open In Cambridge. Hiring Now - Apply Today.</p>
+				<a href="" class="small">www.career-hound.com</a>
+			</div>
+			
+			<div class="ad">
+				<a href="">Cambridge It Jobs</a>
+				<p>Join Now for Top IT Opportunities. New Jobs Added Daily</p>
+				<a href="" class="small">www.theladders.com</a>
+			</div>
+			
+			<div class="ad">
+				<a href="">Find Jobs</a>
+				<p>Find Job Openings In Your Area. Apply for a Position Now!</p>
+				<a href="" class="small">www.findtherightjob.com</a>
+			</div>
+		</div>
+		
+		<div style="clear:both;"></div>
+		
+		<table>
+
+		<% @jobs.each do |job| %>
+  		<tr>
+    		<td>
+				<%= render job, :job => job %>
+			</td>    
+  		</tr>
+		<% end %>
+		</table>
+
+		<%= will_paginate @jobs %>
+
+	</div>
+</div>

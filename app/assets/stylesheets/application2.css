@@ -50,13 +50,12 @@ ul {
 .header {
 	background: #1f3241;
 	border-top: 9px solid #99cc33;
-	height: 60px;
+	height: 150px;
 	padding: 20px 0;
 }
 
-a.logo {
-	float: left;
-	margin-right: 30px;
+.logo {
+	text-align: center;
 }
 
 .left_col {
@@ -131,8 +130,12 @@ a:hover {
 	display: block;
 }
 
-form.search {
-	display: inline;
+.search {
+	margin: 0 auto;
+	text-align: center;
+	padding: 20px;
+	width: 700px;
+	background: white;
 }
 
 form .search_field {	
@@ -140,7 +143,12 @@ form .search_field {
 	margin-right: 10px;
 }
 
-form.search label {
+form .search_field_last {	
+	float: left;
+	width: 130px;
+}
+
+.search form label {
 	font-size: 1.2em;
 	color: white;
 	float: left;
@@ -148,13 +156,13 @@ form.search label {
 	margin-bottom: 5px;
 }
 
-form.search .hint {
+.search form .hint {
 	font-size: 0.8em;
 	color: #c7cccf;
 	margin-left: 10px;
 }
 
-form.search input {
+.search form input {
 	padding: 5px;
 	font-size: 1.1em;
 	float: left;
@@ -162,7 +170,7 @@ form.search input {
 	height: 20px;
 }
 
-form.search input.submit {
+.search form input.submit {
 	width: 120px;
 	height: 35px;
 	margin-top: 15px;

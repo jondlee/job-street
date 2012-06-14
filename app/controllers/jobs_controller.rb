@@ -11,7 +11,10 @@ class JobsController < ApplicationController
     @results = @jobs.count
     
     @jobs = @jobs.paginate(:page => params[:page], :per_page => 5)
+    
 
+    render 'index2', :layout => "layout2"
+    
   end
   
 

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>JobStreet - Your Path to a Better Job</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application2", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,25 +10,34 @@
 
 	<div class="header">
 		<div class="container">
-			<%= link_to image_tag("logo-jobstreet.png"), root_url, :class => "logo" %> 
-					
-			<form action="/" accept-charset="UTF-8" method="post" class="search">
-				<div class="search_field">
-					<%= label_tag :keywords, "Keywords" %> <span class="hint">job title or company</span><br />
-					<%= text_field_tag :keywords, params[:keywords], :placeholder => "Job or Company Name" %>
-				</div>
-				<div class="search_field">
-					<%= label_tag :location, "Location" %> <span class="hint">city or state</span><br />
-					<%= text_field_tag :location, params[:location], :placeholder => "Job Location" %>
-				</div>
-				<div class="search_field">
-			  		<%= submit_tag "Search", :type => "image", :url => image_tag("search_button.png"), :class => "submit" %>
-				</div>
-			</form>
+			<div class="logo">
+				<%= link_to image_tag("logo-jobstreet.png"), root_url %> 
+			</div>
+			
+			<div style="clear:both;"></div>
+			
+			<div class="search">		
+				<form action="/" accept-charset="UTF-8" method="post" class="search">
+					<div class="search_field">
+						<%= label_tag :keywords, "Keywords" %> <span class="hint">job title or company</span><br />
+						<%= text_field_tag :keywords, params[:keywords], :placeholder => "Job or Company Name" %>
+					</div>
+					<div class="search_field">
+						<%= label_tag :location, "Location" %> <span class="hint">city or state</span><br />
+						<%= text_field_tag :location, params[:location], :placeholder => "Job Location" %>
+					</div>
+					<div class="search_field_last">						
+				  		<%= image_submit_tag "search_button.png", :class => "submit" %>				
+					</div>
+				</form>
+				<div style="clear:both;"></div>
+			</div>
 			
 			
 		</div>
 	</div>
+	
+	<div style="clear:both;"></div>	
 	
 	<div class="content">
 		<div class="container">

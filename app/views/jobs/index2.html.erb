@@ -1,11 +1,6 @@
-<div class="mid_col">
-	<div class="sub_header">
-		<b>Job-Street Search Results</b>
-	</div>
-
+<div class="left_col">
+	
 	<div class="content">
-		
-		<p class="results">Found <%= @results %> Jobs <% if not params[:location].blank? %>in <%= params[:location] %> <% end %><% if not params[:keywords].blank? %>'<%= params[:keywords] %>'<% end %></p>
 		
 		<div class="ad_square">
 			<p>Ads by Google</p>
@@ -40,18 +35,17 @@
 			</div>
 		</div>
 		
-		<div style="clear:both;"></div>
+				<p class="results">Found <%= @results %> Jobs <% if not params[:location].blank? %>in <%= params[:location] %> <% end %><% if not params[:keywords].blank? %>'<%= params[:keywords] %>'<% end %></p>
 		
-		<table>
-
-		<% @jobs.each do |job| %>
-  		<tr>
-    		<td>
+		<div class="results">
+			<ul>
+			<% @jobs.each do |job| %>
+	  		<li>
 				<%= render job, :job => job %>
-			</td>    
-  		</tr>
-		<% end %>
-		</table>
+	  		</li>
+			<% end %>
+			</ul>
+		</div>
 
 		<%= will_paginate @jobs %>
 

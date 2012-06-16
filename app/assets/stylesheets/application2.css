@@ -18,10 +18,16 @@ body {
   	font-family: arial, helvetica, sans-serif;
   	font-size: 13px;
   	line-height: 18px;
+	background: #ededed;
 }
 
-table {
-	border-spacing: 0;
+.left_col ul {
+	margin: 0;
+	padding: 0;
+}
+
+.left_col ul li {
+	list-style-type: none;
 }
 
 p {
@@ -45,47 +51,41 @@ ul {
 .header {
 	background: #385c78;
 /*	border-top: 9px solid #99cc33;*/
-	height: 210px;
+	height: 286px;
 }
 
 .header .container {
 	background: #1f3241;	
 }
 
+.quick_search a {
+	float: left; 
+	margin-right: 15px;
+}
+
 .container {
 	width: 1000px;
 	margin: 0 auto;
-	padding: 20px 0;
+	padding: 0 0 20px;
 }
+
+
 
 .logo {
 	text-align: center;
 	margin-bottom: 20px;
+	padding-top: 20px;
 }
 
 .left_col {
-	width: 180px;
-	padding: 20px 20px 0 0;
+	width: 759px;
+	padding: 20px;
 	float: left;
+	border-right: 1px #c4c4c4 solid;
 }
 
 .left_col a {
-	font-size: .9em;
-}
-
-.mid_col {
-	float: left;
-	width: 578px;
-	border-right: 1px #c4c4c4 solid;
-	border-left: 1px #c4c4c4 solid;
-}
-
-.mid_col .sub_header {
-	float: left;
-	padding: 10px 20px;
-	border-bottom: 1px #c4c4c4 solid;
-	width: 538px;
-	background: #ededed;
+	font-size: 1em;
 }
 
 .mid_col .content {
@@ -95,10 +95,14 @@ ul {
 }
 
 .right_col {
-	width: 160px;
+	width: 180px;
 	padding-left: 20px;
 	padding-top: 20px;
 	float: left;
+}
+
+.content {
+	background: white;
 }
 
 .footer {
@@ -118,28 +122,11 @@ a:hover {
 	text-decoration: underline;
 }
 
-.left_col label {
-	font-weight: bold;
-}
-
-.left_col ul {
-	margin-left: 0;
-	padding-left: 0;
-	margin-bottom: 20px;
-}
-
-.left_col ul li {
-	margin-left: 0;
-	padding-left: 0;
-	text-decoration: none;
-	display: block;
-}
 
 .search {
 	margin: 0 auto;
-
 	padding: 20px;
-	width: 640px;
+	width: 660px;
 	background: #121d26;
 }
 
@@ -178,7 +165,7 @@ form .search_field_last {
 .search form input.submit {
 	width: 120px;
 	height: 35px;
-	margin-top: 15px;
+	margin-top: 16px;
 	
 }
 
@@ -192,8 +179,10 @@ form .search_field_last {
 }
 
 .ad_square {
-	width: 560px;
+	width: 400px;
 	height: 334px;
+	float: right;
+	margin: 0 0 20px 20px;
 }
 
 .ad {
@@ -207,7 +196,8 @@ form .search_field_last {
 
 .ad a.small {
 	font-size: .8em;
-	color: #008000;
+	/*color: #008000;*/
+	color: #999;
 }
 
 .ad_small a.google {

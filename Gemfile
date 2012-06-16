@@ -39,3 +39,4 @@ gem 'jquery-rails'
 
 gem 'will_paginate', '~> 3.0'
 gem 'mechanize'
+gem 'yaml_db'

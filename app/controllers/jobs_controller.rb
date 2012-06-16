@@ -5,15 +5,23 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
 
-
     print "Params: " + params.to_s
     @jobs = Job.search(params) ? Job.search(params) : Job.all
     @results = @jobs.count
     
-    @jobs = @jobs.paginate(:page => params[:page], :per_page => 5)
-    
+    @jobs = @jobs.order("date_posted DESC").paginate(:page => params[:page], :per_page => 10)
 
-    render 'index2', :layout => "layout2"
+
+    if session[:v].nil?
+      version = rand(2)
+      session[:v] = version
+    end
+    
+    if session[:v] == 0
+      render 'index'
+    else
+      render 'index2', :layout => "layout2"
+    end
     
   end
   
